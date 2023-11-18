@@ -1,2 +1,2 @@
-# weather-app-
+# weather-app
 weather app with paython kivy
