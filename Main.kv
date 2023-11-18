@@ -1,0 +1,163 @@
+<MyLayout>:
+    canvas.before:        
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source:self.bgimg.source         
+    
+    GridLayout:
+        padding: ('50dp', '1dp', '50dp', '10dp')
+        spacing: '10dp'
+        size:root.width,root.height
+        cols:2
+
+        Button:  
+            color:0,0,0,1
+            size_hint:(2,6) 
+            outline_width: 0
+            id:name_label  
+            font_size:dp(20)
+            background_color: (255,255,255,0)
+        Button:  
+            color:0,0,0,1
+            size_hint:(2,6) 
+            outline_width: 0
+            id:name_label 
+            font_size:dp(20)
+            background_color: (255,255,255,0)
+
+
+        
+        TextInput:
+            id:name_input
+            multiline:False
+            font_size:dp(20)
+            halign: 'center'
+            valign: 'middle'
+            size_hint:(1,1) 
+            outline_width: 0
+            background_color: (255,255,255,.5)        
+             
+        Button:
+            color:1,1,1,1
+            outline_width: 0
+            size_hint:(1,1)
+            font_size:dp(20)
+            text:"Get Weather"    
+            on_press: root.press()
+            background_color: (0,0,0,.5)
+           
+
+        
+        
+            
+
+
+        Button:
+            background_color: (255,255,255,1)
+            size_hint:(1,1.5) 
+            Image:
+                id:weather_icon
+                center_x: self.parent.center_x
+                center_y: self.parent.center_y 
+                size: dp(100), dp(100)
+                source:root.img.source     
+        Button:
+            color:1,1,1,1
+            id:weather_label
+            size_hint:(1,1.5) 
+            text:'weather'
+            font_size:dp(15)
+            background_color: (0,0,0,.5)
+            
+        RoundedButton1:
+            color:0,0,0,1
+            outline_width: 0
+            size_hint:(1,1) 
+            #background_color: (255,255,255,1)    
+            Image:
+                center_x: self.parent.center_x
+                center_y: self.parent.center_y 
+                size: dp(30), dp(30)
+                source:'location.gif'
+                               
+        RoundedButton:  
+            color:1,1,1,1
+            size_hint:(1,1) 
+            outline_width: 0
+            id:name_label 
+            text:'city'
+            font_size:dp(15)
+            #background_color: (255,255,255,.6)
+
+        RoundedButton1:
+            #background_color: (255,255,255,1)
+            size_hint:(1,1) 
+            Image:
+                center_x: self.parent.center_x
+                center_y: self.parent.center_y 
+                size: dp(30), dp(30)
+                source:'temperature.gif'      
+        RoundedButton:
+            color:1,1,1,1
+            size_hint:(1,1) 
+            id:temperature_label
+            text:'temperature'
+            font_size:dp(15)
+            #background_color: (255,255,255,.6)
+           
+
+        RoundedButton1:
+            #background_color: (255,255,255,1)
+            size_hint:(1,1) 
+            Image:
+                center_x: self.parent.center_x
+                center_y: self.parent.center_y 
+                size: dp(30), dp(30)
+                source:'feels.gif'  
+        RoundedButton:
+            color:1,1,1,1
+            size_hint:(1,1) 
+            id:feelslike_label
+            text:'feelslike'
+            font_size:dp(15)
+            #background_color: (255,255,255,.6)
+            
+
+        RoundedButton1:
+            #background_color: (255,255,255,1)
+            size_hint:(1,1) 
+            Image:
+                center_x: self.parent.center_x
+                center_y: self.parent.center_y 
+                size: dp(30), dp(30)
+                source:'wind.gif'   
+        RoundedButton:
+            size_hint:(1,1) 
+            color:1,1,1,1
+            id:wind_label
+            text:'wind'
+            font_size:dp(15)
+            #background_color: (255,255,255,.6)
+     
+<RoundedButton1@Button>
+	background_color: (0,0,0,0)
+	background_normal: ''
+	canvas.before:
+		Color:
+			rgba: (255,255,255,1)
+		RoundedRectangle:
+			size: self.size
+			pos: self.pos
+			radius: [30] 
+
+<RoundedButton@Button>
+	background_color: (0,0,0,0)
+	background_normal: ''
+	canvas.before:
+		Color:
+			rgba: (0,0,0,.5)
+		RoundedRectangle:
+			size: self.size
+			pos: self.pos
+			radius: [30]     
